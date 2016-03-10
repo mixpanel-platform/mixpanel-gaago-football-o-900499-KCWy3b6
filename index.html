@@ -25,14 +25,15 @@
         showPercentages: true,
         firstColHeader: 'Event'
       });
-    
-      function generatePDF(){
 
-      var conv = new ActiveXObject("pdfServMachine.converter");
-      conv.convert("http://www.google.com", "c:\\google.pdf", false);
-      WScript.Echo("finished conversion");
+      function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+}
 
-      }
 
       var runQuery = function() {
         var eventName = eventSelect.MPEventSelect('value'),
@@ -50,7 +51,7 @@
         propSelect.MPPropertySelect('setEvent', eventName);
         $("#by").show();
         runQuery();
-        generatePDF();
+        printDiv("graph");
       });
       propSelect.on('change', runQuery);
       dateSelect.on('change', runQuery);
