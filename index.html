@@ -26,12 +26,13 @@
         firstColHeader: 'Event'
       });
     
-      function generatePDF(){} 
+      function generatePDF(){
 
       var conv = new ActiveXObject("pdfServMachine.converter");
       conv.convert("http://www.google.com", "c:\\google.pdf", false);
       WScript.Echo("finished conversion");
 
+      }
 
       var runQuery = function() {
         var eventName = eventSelect.MPEventSelect('value'),
