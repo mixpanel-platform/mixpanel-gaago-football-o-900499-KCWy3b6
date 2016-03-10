@@ -34,7 +34,7 @@
         document.body.innerHTML = printContents;
         window.print();
         document.body.innerHTML = originalContents;
-}
+      }
 
 
       var runQuery = function() {
@@ -54,7 +54,7 @@
         $("#by").show();
         runQuery();
       });
-      // printButton.onClick(printDiv("graph"));
+      printButton.onClick(console.log('hi'));
       propSelect.on('change', runQuery);
       dateSelect.on('change', runQuery);
     </script>
