@@ -54,7 +54,6 @@
         document.body.innerHTML = printContents;
         window.print();
         document.body.innerHTML = originalContents;
-        console.log("hi");
       }
 
       var runQuery = function() {
@@ -75,6 +74,7 @@
         runQuery();
       });
       $('#run').on('click', function() {
+         console.log("hi");
         printDiv('graph');
       });
       propSelect.on('change', runQuery);
