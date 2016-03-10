@@ -51,10 +51,9 @@
         propSelect.MPPropertySelect('setEvent', eventName);
         $("#by").show();
         runQuery();
-        printDiv("graph");
       });
       propSelect.on('change', runQuery);
-      dateSelect.on('change', runQuery);
+      dateSelect.on('change', printDiv("graph"));
     </script>
   </body>
 </html>
